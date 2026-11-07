@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d14">
+  <title>PLAYMARKET — Игровой маркетплейс</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">P</span> PLAY<span>MARKET</span></a>
+    <nav class="main-nav">
+      <a href="#catalog">Каталог</a><a href="#categories">Категории</a><a href="#how">Как это работает</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="favoritesBtn" aria-label="Избранное">♡ <span id="favCount">0</span></button>
+      <button class="login-btn" id="loginBtn">Войти</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> ИГРОВОЙ МАРКЕТПЛЕЙС</div>
+        <h1>ТВОЯ ИГРА.<br><span>ТВОИ ПРАВИЛА.</span></h1>
+        <p>Находи игровые предметы, пополняй коллекцию и открывай новые возможности в любимых играх.</p>
+        <a class="primary-btn" href="#catalog">Перейти в каталог <span>↗</span></a>
+        <div class="hero-stats"><div><b>Каталог</b><small>Популярные предложения</small></div><div><b>Удобно</b><small>Всё в одном месте</small></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="game-card card-back"><span>★</span><small>LEVEL UP</small></div>
+        <div class="game-card card-front"><div class="gem">◆</div><strong>GAME<br>ON</strong><small>PLAYMARKET</small></div>
+        <div class="float-tag tag-top">✦ Новые предложения</div><div class="float-tag tag-bottom">⚡ Игровой мир рядом</div>
+      </div>
+    </section>
+
+    <section class="category-section" id="categories">
+      <div class="section-heading"><div><div class="eyebrow">ВЫБИРАЙ СВОЁ</div><h2>Популярные категории</h2></div><a href="#catalog" class="subtle-link">Все предложения ↗</a></div>
+      <div class="category-grid">
+        <button class="category active" data-category="Все"><span class="cat-icon">▦</span><b>Все игры</b><small>Весь каталог</small></button>
+        <button class="category" data-category="Roblox"><span class="cat-icon pink">✦</span><b>Roblox</b><small>Игровые предметы</small></button>
+        <button class="category" data-category="Minecraft"><span class="cat-icon green">▧</span><b>Minecraft</b><small>Дополнения и другое</small></button>
+        <button class="category" data-category="Brawl Stars"><span class="cat-icon orange">★</span><b>Brawl Stars</b><small>Игровые наборы</small></button>
+        <button class="category" data-category="Другое"><span class="cat-icon blue">＋</span><b>Другое</b><small>Другие игры</small></button>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalog">
+      <div class="section-heading catalog-heading"><div><div class="eyebrow">НАЙДИ ТО, ЧТО ИЩЕШЬ</div><h2>Каталог предложений</h2></div>
+        <div class="catalog-tools"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Поиск по каталогу..."></label>
+        <select id="sortSelect" aria-label="Сортировка"><option value="popular">Сначала популярные</option><option value="cheap">Сначала дешевле</option><option value="expensive">Сначала дороже</option></select></div>
+      </div>
+      <div class="results-line"><span id="resultsCount">6 предложений</span><span>Демонстрационный каталог</span></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="eyebrow">ПРОСТО И ПОНЯТНО</div><h2>Как это работает?</h2>
+      <div class="steps"><article><span>01</span><h3>Выбери игру</h3><p>Найди нужную категорию и просмотри предложения.</p></article><article><span>02</span><h3>Изучи карточку</h3><p>Проверь описание, цену и важные детали предложения.</p></article><article><span>03</span><h3>Свяжись с продавцом</h3><p>Уточни условия перед любой покупкой.</p></article></div>
+      <p class="notice">Это демонстрационный шаблон. Реальные платежи, сделки и доставка товаров не подключены.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">P</span> PLAY<span>MARKET</span></a><p>© 2026 PLAYMARKET. Демонстрационный проект.</p><a href="#how">Правила и информация</a></footer>
+
+  <div class="modal hidden" id="productModal" role="dialog" aria-modal="true">
+    <div class="modal-panel"><button class="close" data-close="productModal">×</button><div id="modalContent"></div></div>
+  </div>
+  <div class="modal hidden" id="loginModal" role="dialog" aria-modal="true">
+    <div class="modal-panel auth-panel"><button class="close" data-close="loginModal">×</button><div class="eyebrow">PLAYMARKET ID</div><h2>Добро пожаловать</h2><p class="muted">Демо-вход для просмотра интерфейса.</p><label class="field-label">Имя пользователя<input id="userName" placeholder="Например, Player123"></label><button class="primary-btn full" id="demoLogin">Продолжить</button><small class="muted">Не вводи пароли или личные данные. Это не настоящая система аккаунтов.</small></div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
